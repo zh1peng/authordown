@@ -63,19 +63,20 @@ xlsx_path <- system.file("extdata", "authordown_template.xlsx", package = "autho
 authors_xlsx <- authordown_read_local(xlsx_path)
 ```
 
-## URL workflows (export to local file first)
+## Online tables (export to local file first)
 
-These helpers are placeholders to keep checks offline-safe. Export your data to CSV/XLSX and read it locally.
+If you manage authors in an online table, export it locally and read the file.
 
-```{r, eval=FALSE}
-# Google Sheets
-sheet_url <- "https://docs.google.com/spreadsheets/d/..."
-authors <- authordown_read_google_sheet(sheet_url)
+1) Export to CSV or XLSX.
+2) Read locally with `authordown_read_local()`.
 
-# Tencent table
-qq_url <- "https://docs.qq.com/sheet/..."
-authors <- authordown_read_tencent(qq_url)
-```
+Supported formats: CSV, TSV, XLSX.
+
+## Affiliations
+
+Use `Affiliation1`, `Affiliation2`, ... `AffiliationN` columns to list all
+affiliations for each author. There is no hard limit; add as many columns as
+needed. The title page numbers affiliations in the order they first appear.
 
 ## Troubleshooting
 

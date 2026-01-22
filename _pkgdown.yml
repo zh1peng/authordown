@@ -14,8 +14,6 @@ reference:
     contents:
       - authordown_template
       - authordown_read_local
-      - authordown_read_google_sheet
-      - authordown_read_tencent
       - authordown_validate
   - title: "Outputs"
     contents:
