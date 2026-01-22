@@ -23,6 +23,17 @@ usethis::use_package("shiny")
 
 
 
+library(authordown)
+
+authordown_template("authors.csv")
+authors <- authordown_read_local("authors.csv")
+
+generate_title_page(authors, title = "My Paper")
+generate_acknowledgement(authors)
+generate_conflict(authors)
+generate_contribution(authors)
+
+
 generate_template() 
 
  authors <- data.frame(

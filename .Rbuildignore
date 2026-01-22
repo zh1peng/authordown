@@ -2,3 +2,13 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 packageDescription.R
+^\.git$
+^\.gitignore$
+^\.Rcheck$
+^check-output.*$
+^packageDevScript\.R$
+^authordown_template\.csv$
+^authors\.csv$
+^authordown-Ex\.R$
+^authordown_.*\.tar\.gz$
+^cran-comments\.md$
