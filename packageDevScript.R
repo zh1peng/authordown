@@ -62,6 +62,13 @@ browseURL(html_path)
 html_path <- render_section_html("Conflict of Interest", generate_conflict, authors)
 browseURL(html_path)
 
+title_page <- generate_title_page(
+  data = authors,
+  title = "Example Paper",
+  style = "default",
+  show_degree = TRUE
+)
+cat(title_page)
 
 
 authors <- data.frame(
