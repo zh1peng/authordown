@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Chinese README</title>
+
+<script src="readme-zh_files/header-attrs-2.28/header-attrs.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="D:/R-4.4.1/library/rmarkdown/rmarkdown/templates/html_vignette/resources/vignette.css" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Chinese README</h1>
+
+
+
+<div id="authordown" class="section level1">
+<h1>authordown</h1>
+<p><img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" /></p>
+<p><strong>English README:</strong> <a
+href="README.md">README.md</a></p>
+<p>authordown
+是一个用于管理作者信息并生成论文前置信息（尤其是大型作者列表题名页）的 R
+包。</p>
+<div id="功能" class="section level2">
+<h2>功能</h2>
+<ul>
+<li>题名页生成（机构编号、通讯作者标记）</li>
+<li>作者信息校验与标准化</li>
+<li>致谢、利益冲突与作者贡献部分</li>
+<li>标准模板，统一作者数据录入</li>
+<li>Shiny 应用用于快速预览与导出</li>
+</ul>
+</div>
+<div id="安装" class="section level2">
+<h2>安装</h2>
+<p>CRAN（发布后）：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;authordown&quot;</span>)</span></code></pre></div>
+<p>GitHub：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># install.packages(&quot;devtools&quot;)</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;zh1peng/authordown&quot;</span>)</span></code></pre></div>
+</div>
+<div id="端到端流程离线可用" class="section level2">
+<h2>端到端流程（离线可用）</h2>
+<div id="从内置模板开始" class="section level3">
+<h3>1) 从内置模板开始</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(authordown)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># 使用包内置 CSV 模板</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>template_path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;authordown_template.csv&quot;</span>, <span class="at">package =</span> <span class="st">&quot;authordown&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>authors <span class="ot">&lt;-</span> <span class="fu">authordown_read_local</span>(template_path)</span></code></pre></div>
+<p>也可以写出一个新的模板到工作目录：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">authordown_template</span>(<span class="st">&quot;authors.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="生成题名页显示学位" class="section level3">
+<h3>2) 生成题名页（显示学位）</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>title_page <span class="ot">&lt;-</span> <span class="fu">generate_title_page</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="at">data =</span> authors,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&quot;Example Paper&quot;</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;default&quot;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="at">show_degree =</span> <span class="cn">TRUE</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="fu">cat</span>(title_page)</span></code></pre></div>
+</div>
+<div id="生成其他部分" class="section level3">
+<h3>3) 生成其他部分</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>ack <span class="ot">&lt;-</span> <span class="fu">generate_acknowledgement</span>(authors, <span class="at">style =</span> <span class="st">&quot;paragraph&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>coi <span class="ot">&lt;-</span> <span class="fu">generate_conflict</span>(authors, <span class="at">style =</span> <span class="st">&quot;paragraph&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>contrib <span class="ot">&lt;-</span> <span class="fu">generate_contribution</span>(authors, <span class="at">style =</span> <span class="st">&quot;bullets&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">cat</span>(ack)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">cat</span>(coi)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="fu">cat</span>(contrib)</span></code></pre></div>
+</div>
+<div id="xlsx-输入" class="section level3">
+<h3>4) XLSX 输入</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>xlsx_path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;authordown_template.xlsx&quot;</span>, <span class="at">package =</span> <span class="st">&quot;authordown&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>authors_xlsx <span class="ot">&lt;-</span> <span class="fu">authordown_read_local</span>(xlsx_path)</span></code></pre></div>
+</div>
+</div>
+<div id="在线表格推荐流程" class="section level2">
+<h2>在线表格推荐流程</h2>
+<p>如果你在在线表格中维护作者信息，建议导出到本地后再读取：</p>
+<ol style="list-style-type: decimal">
+<li>导出为 CSV 或 XLSX（也可 TSV）</li>
+<li>使用 <code>authordown_read_local()</code> 读取本地文件</li>
+</ol>
+<p>支持格式：CSV、TSV、XLSX。</p>
+</div>
+<div id="机构信息affiliations" class="section level2">
+<h2>机构信息（Affiliations）</h2>
+<p>使用 <code>Affiliation1</code>, <code>Affiliation2</code>, …
+<code>AffiliationN</code> 列填写同一作者的多个机构。
+没有硬上限，需要多少列就添加多少列。题名页会按首次出现的顺序编号。</p>
+</div>
+<div id="shiny-应用" class="section level2">
+<h2>Shiny 应用</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runApp</span>(<span class="fu">system.file</span>(<span class="st">&quot;shiny-app&quot;</span>, <span class="at">package =</span> <span class="st">&quot;authordown&quot;</span>))</span></code></pre></div>
+<p>流程：下载模板 → 填写模板 → 上传 → 预览解析结果 →
+生成输出并复制/导出。</p>
+</div>
+<div id="渲染-html-以便复制粘贴" class="section level2">
+<h2>渲染 HTML 以便复制粘贴</h2>
+<p>如果需要渲染后的 HTML 便于粘贴到投稿系统，可使用：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>\dontrun{</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>html_path <span class="ot">&lt;-</span> <span class="fu">render_section_html</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="at">section_title =</span> <span class="st">&quot;Conflict of Interest&quot;</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="at">content_function =</span> generate_conflict,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">data =</span> authors,</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">&quot;paragraph&quot;</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="常见问题" class="section level2">
+<h2>常见问题</h2>
+<ul>
+<li>“Missing required column” 表示文件缺少必填列（如
+<code>FirstName</code>、<code>LastName</code>）。</li>
+<li>“Corresponding authors must have an Email” 表示存在
+<code>Corresponding = TRUE</code> 但 <code>Email</code> 为空。</li>
+<li>“ORCID values must use the 0000-0000-0000-0000 format” 表示 ORCID
+格式错误。</li>
+</ul>
+</div>
+<div id="许可" class="section level2">
+<h2>许可</h2>
+<p>AGPL-3</p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
