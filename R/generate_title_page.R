@@ -88,14 +88,15 @@ generate_title_page <- function(data,
   
   # 4) Gather all affiliation columns
   aff_cols <- grep("^Affiliation", names(data), value = TRUE)
-  # Extract unique non-NA affiliations in the order they appear
+  # Extract unique non-NA affiliations in author order
   all_affils <- character()
-  for (col in aff_cols) {
-    vals <- as.character(data[[col]])
-    vals <- vals[!is.na(vals) & vals != ""]
-    for (v in vals) {
-      if (!(v %in% all_affils)) {
-        all_affils <- c(all_affils, v)
+  if (length(aff_cols) > 0) {
+    for (row_idx in seq_len(nrow(data))) {
+      for (col in aff_cols) {
+        val <- as.character(data[row_idx, col])
+        if (!is.na(val) && val != "" && !(val %in% all_affils)) {
+          all_affils <- c(all_affils, val)
+        }
       }
     }
   }
@@ -125,6 +126,7 @@ generate_title_page <- function(data,
     }
     aff_superscript <- ""
     if (length(aff_for_author) > 0) {
+      aff_for_author <- sort(unique(aff_for_author))
       aff_superscript <- paste0("^", paste(aff_for_author, collapse = ","), "^")
     }
     
