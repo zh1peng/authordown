@@ -50,7 +50,8 @@ FirstName = c("Alice", "Bob"),
    Contribution = c("Conceptualization; Data curation", "Supervision; Writing - review")
 )
 generate_contribution(authors)
-
+html_path <- render_section_html("Conflict of Interest", generate_contributio, authors)
+browseURL(html_path)
 
 # conflict of interest example
  authors <- data.frame(
