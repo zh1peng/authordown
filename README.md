@@ -1,4 +1,4 @@
-# authordown <img src="man/figures/logo.png" align="right" height="120" alt="authordown logo" />
+# authordown <img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" />
 
 [![R-CMD-check](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml)
 
@@ -80,10 +80,10 @@ authors_xlsx <- authordown_read_local(xlsx_path)
 
 ## Recommended workflow for online tables
 
-If you manage authors in an online table (Tencent/Google), export it locally and
-then use `authordown_read_local()`:
+If you manage authors in an online table, export it locally and then use
+`authordown_read_local()`:
 
-1) Export to CSV or XLSX.
+1) Export to CSV or XLSX (or TSV).
 2) Read locally with `authordown_read_local()`.
 
 Supported formats: CSV, TSV, XLSX.

@@ -2,9 +2,33 @@ library(shiny)
 library(authordown)
 
 server <- function(input, output, session) {
+  read_input_data <- function(path, sheet = NULL) {
+    if (!file.exists(path)) {
+      rlang::abort(paste0("File not found: ", path))
+    }
+    ext <- tolower(tools::file_ext(path))
+    if (ext %in% c("csv", "txt")) {
+      data <- utils::read.csv(path, stringsAsFactors = FALSE, check.names = FALSE)
+    } else if (ext == "tsv") {
+      data <- utils::read.delim(path, stringsAsFactors = FALSE, check.names = FALSE)
+    } else if (ext == "xlsx") {
+      if (!requireNamespace("openxlsx", quietly = TRUE)) {
+        rlang::abort("Package 'openxlsx' is required to read XLSX files.")
+      }
+      if (is.null(sheet)) {
+        data <- openxlsx::read.xlsx(path)
+      } else {
+        data <- openxlsx::read.xlsx(path, sheet = sheet)
+      }
+    } else {
+      rlang::abort("Unsupported file type. Use CSV, TSV, or XLSX.")
+    }
+    authordown_validate(data)
+  }
+
   sample_data <- function() {
     sample_path <- system.file("extdata", "authordown_template.csv", package = "authordown")
-    authordown_read_local(sample_path)
+    read_input_data(sample_path)
   }
 
   data_rv <- reactiveVal(sample_data())
@@ -17,7 +41,7 @@ server <- function(input, output, session) {
       return()
     }
     tryCatch({
-      data_rv(authordown_read_local(input$author_file$datapath))
+      data_rv(read_input_data(input$author_file$datapath))
       error_rv(NULL)
     }, error = function(e) {
       error_rv(conditionMessage(e))

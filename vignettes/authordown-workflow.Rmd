@@ -67,7 +67,7 @@ authors_xlsx <- authordown_read_local(xlsx_path)
 
 If you manage authors in an online table, export it locally and read the file.
 
-1) Export to CSV or XLSX.
+1) Export to CSV or XLSX (or TSV).
 2) Read locally with `authordown_read_local()`.
 
 Supported formats: CSV, TSV, XLSX.

@@ -15,6 +15,8 @@ fluidPage(
   tags$hr(),
   tags$h3("2) Upload completed template"),
   fileInput("author_file", "Upload CSV or XLSX", accept = c(".csv", ".xlsx", ".tsv")),
+  tags$p("Supported formats: CSV, TSV, XLSX."),
+  tags$p("Affiliations: use columns named Affiliation1, Affiliation2, ... AffiliationN."),
   verbatimTextOutput("validation_msg"),
 
   tags$hr(),
