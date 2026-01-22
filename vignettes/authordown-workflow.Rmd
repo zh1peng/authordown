@@ -1,0 +1,84 @@
+---
+title: "End-to-End Workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{End-to-End Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## Overview
+
+authordown standardizes author metadata and produces common manuscript sections. This vignette uses bundled example data so it can run offline and deterministically.
+
+## Load example data
+
+```{r}
+library(authordown)
+
+csv_path <- system.file("extdata", "authordown_template.csv", package = "authordown")
+authors <- authordown_read_local(csv_path)
+```
+
+If you want a fresh template in your working directory:
+
+```{r}
+authordown_template("authors.csv")
+```
+
+## Title page
+
+```{r}
+title_page <- generate_title_page(
+  data = authors,
+  title = "Example Paper",
+  style = "default",
+  show_degree = TRUE
+)
+cat(title_page)
+```
+
+## Acknowledgements, conflict, and contributions
+
+```{r}
+ack <- generate_acknowledgement(authors, style = "paragraph")
+coi <- generate_conflict(authors, style = "paragraph")
+contrib <- generate_contribution(authors, style = "bullets")
+
+cat(ack)
+cat("\n\n")
+cat(coi)
+cat("\n\n")
+cat(contrib)
+```
+
+## XLSX input
+
+```{r}
+xlsx_path <- system.file("extdata", "authordown_template.xlsx", package = "authordown")
+authors_xlsx <- authordown_read_local(xlsx_path)
+```
+
+## URL workflows (export to local file first)
+
+These helpers are placeholders to keep checks offline-safe. Export your data to CSV/XLSX and read it locally.
+
+```{r, eval=FALSE}
+# Google Sheets
+sheet_url <- "https://docs.google.com/spreadsheets/d/..."
+authors <- authordown_read_google_sheet(sheet_url)
+
+# Tencent table
+qq_url <- "https://docs.qq.com/sheet/..."
+authors <- authordown_read_tencent(qq_url)
+```
+
+## Troubleshooting
+
+- Missing required columns means your input does not include required fields such as `FirstName` and `LastName`.
+- Corresponding authors must have an Email means a row has `Corresponding = TRUE` but `Email` is blank.
+- ORCID values must match `0000-0000-0000-0000` format.

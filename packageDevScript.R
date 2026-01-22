@@ -93,3 +93,6 @@ cat(generate_title_page(authors, title = "A Great Paper"))
 html_path <- render_section_html("Title Page", generate_title_page, authors, title="A great paper")
 browseURL(html_path)
 
+library(shiny)
+
+shiny::runApp(system.file("shiny-app", package = "authordown"))

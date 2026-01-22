@@ -12,3 +12,10 @@ packageDescription.R
 ^authordown-Ex\.R$
 ^authordown_.*\.tar\.gz$
 ^cran-comments\.md$
+^docs$
+^pkgdown$
+^vignettes/--find-assets\.html$
+^vignettes/.*\.knit\.md$
+^vignettes/authors\.csv$
+^rlib$
+^_pkgdown\.yml$

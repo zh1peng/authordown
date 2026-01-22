@@ -64,7 +64,9 @@ authordown_validate <- function(data, require_affiliations = FALSE) {
 
   if ("Orcid" %in% names(data)) {
     orcid_vals <- data$Orcid[!is.na(data$Orcid)]
-    bad_orcid <- orcid_vals[!grepl("^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$", orcid_vals)]
+    bad_orcid <- orcid_vals[
+      !grepl("^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$", orcid_vals)
+    ]
     if (length(bad_orcid) > 0) {
       errors <- c(errors, "ORCID values must use the 0000-0000-0000-0000 format.")
     }

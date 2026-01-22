@@ -26,7 +26,11 @@ authordown_read_local <- function(path, sheet = NULL, validate = TRUE) {
     if (!requireNamespace("openxlsx", quietly = TRUE)) {
       rlang::abort("Package 'openxlsx' is required to read XLSX files.")
     }
-    data <- openxlsx::read.xlsx(path, sheet = sheet)
+    if (is.null(sheet)) {
+      data <- openxlsx::read.xlsx(path)
+    } else {
+      data <- openxlsx::read.xlsx(path, sheet = sheet)
+    }
   } else {
     rlang::abort("Unsupported file type. Use CSV, TSV, or XLSX.")
   }

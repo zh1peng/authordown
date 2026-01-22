@@ -1,0 +1,18 @@
+authordown              Generate all sections (title page,
+                        acknowledgement, conflict, contribution)
+authordown_read_google_sheet
+                        Read author metadata from Google Sheets
+                        (placeholder)
+authordown_read_local   Read a local author metadata file
+authordown_read_tencent
+                        Read author metadata from Tencent table
+                        (placeholder)
+authordown_template     Write an authordown input template
+authordown_validate     Validate author metadata
+generate_acknowledgement
+                        Generate an Acknowledgement Section
+generate_conflict       Generate a Conflict of Interest Statement
+generate_contribution   Generate Author Contributions
+generate_template       Generate a sample CSV template for authordown
+generate_title_page     Generate a Title Page
+render_section_html     Render a Manuscript Section to HTML

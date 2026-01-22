@@ -1,78 +1,112 @@
+# authordown
 
-# 🐝 authordown
+authordown is an R package for managing author metadata and generating manuscript front matter, especially for large author lists.
 
-**authordown** is an easy-to-use R package designed to streamline the management of author metadata, affiliations, and contributions in academic manuscripts—particularly helpful for papers with extensive author lists.
+## Features
 
-## ✨ Features
+- Title page generation with affiliation numbering and correspondence notes
+- Author metadata validation and normalization
+- Acknowledgements, conflict of interest, and contribution sections
+- Templates to standardize author data entry
+- Shiny app for quick preview and export
 
-- **Automatic title page generation**: Creates formatted title pages tailored to journal requirements.
-- **Author metadata management**: Easily handle multiple authors, affiliations, and correspondence information.
-- **Acknowledgments and Conflict-of-Interest**: Automatically generate sections from standardized information.
-- **CRediT-compatible author contributions**: Clearly define each author's contributions based on structured input.
-- **Interactive Shiny App**: A user-friendly web interface to simplify the process.
+## Installation
 
-## 🚀 Installation
+From CRAN (once available):
 
-You can install the development version directly from GitHub:
+```r
+install.packages("authordown")
+```
+
+From GitHub:
 
 ```r
 # install.packages("devtools")
 devtools::install_github("zh1peng/authordown")
 ```
 
-## 📖 Quick Start
+## End-to-end workflow (offline safe)
 
-Prepare your author data using the provided CSV template (`author_template.csv`):
+### 1) Start from the bundled template
 
 ```r
 library(authordown)
 
-# Load author data
-authors <- read.csv("author_template.csv")
-
-# Generate title page text
-generate_titlepage(authors, journal_style = "APA")
+# Use the bundled CSV template
+template_path <- system.file("extdata", "authordown_template.csv", package = "authordown")
+authors <- authordown_read_local(template_path)
 ```
 
-## 🎯 Using the Shiny Interface
+You can also write a fresh template to your working directory:
 
-A convenient Shiny interface is included:
+```r
+authordown_template("authors.csv")
+```
+
+### 2) Generate a title page (with degree shown)
+
+```r
+title_page <- generate_title_page(
+  data = authors,
+  title = "Example Paper",
+  style = "default",
+  show_degree = TRUE
+)
+cat(title_page)
+```
+
+### 3) Generate other sections
+
+```r
+ack <- generate_acknowledgement(authors, style = "paragraph")
+coi <- generate_conflict(authors, style = "paragraph")
+contrib <- generate_contribution(authors, style = "bullets")
+
+cat(ack)
+cat("\n\n")
+cat(coi)
+cat("\n\n")
+cat(contrib)
+```
+
+### 4) XLSX input
+
+```r
+xlsx_path <- system.file("extdata", "authordown_template.xlsx", package = "authordown")
+authors_xlsx <- authordown_read_local(xlsx_path)
+```
+
+## URL workflows (export to local file first)
+
+These helpers currently require a local export for offline checks. Export your table to CSV/XLSX and then use `authordown_read_local()`.
+
+```r
+\dontrun{
+# Google Sheets
+sheet_url <- "https://docs.google.com/spreadsheets/d/..."
+authors <- authordown_read_google_sheet(sheet_url)
+
+# Tencent table
+qq_url <- "https://docs.qq.com/sheet/..."
+authors <- authordown_read_tencent(qq_url)
+}
+```
+
+## Shiny app
 
 ```r
 library(shiny)
-
 shiny::runApp(system.file("shiny-app", package = "authordown"))
 ```
 
-Simply upload your CSV file, select journal style, and get your formatted content instantly.
+Upload your template CSV, select a style, and click Generate to preview the title page.
 
-## 📋 Example CSV Format
+## Troubleshooting
 
-Here's a quick look at the CSV structure you need:
+- "Missing required column" means your file does not include required fields such as `FirstName` and `LastName`.
+- "Corresponding authors must have an Email" means a row has `Corresponding = TRUE` but `Email` is blank.
+- "ORCID values must use the 0000-0000-0000-0000 format" indicates a formatting error.
 
-| Order | FirstName | LastName | Email | Affiliation1 | Affiliation2 | Corresponding |
-|-------|-----------|----------|-------|--------------|--------------|---------------|
-| 1     | Alice     | Smith    | alice@example.com | University X, Dept. Y | NA           | TRUE          |
-| 2     | Bob       | Johnson  | bob@example.com   | University X, Dept. Y | Company Z    | FALSE         |
+## License
 
-- `Order`: Author order in manuscript
-- `Corresponding`: Mark TRUE for corresponding authors
-
-## 🛠 Contributing
-
-Bug reports, feature suggestions, and contributions are welcome:
-
-1. Fork the repository
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to your branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📧 Contact
-
-- Your Name -zhipeng30@foxmail.com
-- Project Link: [https://github.com/zh1peng/authordown](https://github.com/zh1peng/authordown)
+AGPL-3

@@ -1,0 +1,33 @@
+url: https://zh1peng.github.io/authordown
+
+template:
+  bootstrap: 5
+
+navbar:
+  structure:
+    left: [intro, reference, articles]
+
+reference:
+  - title: "Input"
+    contents:
+      - authordown_template
+      - authordown_read_local
+      - authordown_read_google_sheet
+      - authordown_read_tencent
+      - authordown_validate
+  - title: "Outputs"
+    contents:
+      - generate_title_page
+      - generate_acknowledgement
+      - generate_conflict
+      - generate_contribution
+      - authordown
+      - render_section_html
+  - title: "Utilities"
+    contents:
+      - generate_template
+
+articles:
+  - title: "Workflows"
+    contents:
+      - authordown-workflow
