@@ -1,6 +1,6 @@
 url: https://zh1peng.github.io/authordown
 logo: man/figures/logo.png
-favicon: ~
+favicon: pkgdown/favicon/favicon.png
 
 template:
   bootstrap: 5
@@ -31,3 +31,6 @@ articles:
   - title: "Workflows"
     contents:
       - authordown-workflow
+  - title: "Languages"
+    contents:
+      - readme-zh

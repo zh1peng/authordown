@@ -1,0 +1,17 @@
+---
+title: "Chinese README"
+output:
+  rmarkdown::html_vignette:
+    self_contained: false
+vignette: >
+  %\VignetteIndexEntry{Chinese README}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE, results='asis'}
+path <- if (file.exists("README.zh.md")) "README.zh.md" else file.path("..", "README.zh.md")
+lines <- readLines(path, warn = FALSE)
+lines <- lines[!grepl("R-CMD-check", lines)]
+cat(lines, sep = "\n")
+```
