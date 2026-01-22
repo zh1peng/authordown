@@ -73,6 +73,12 @@ generate_title_page <- function(data,
       tolower(trimws(x)) %in% c("true", "yes", "1")
     }
     data$IsCorresponding <- sapply(data$Correspondence, is_corr)
+  } else if ("Corresponding" %in% colnames(data)) {
+    is_corr <- function(x) {
+      if (is.logical(x)) return(x)
+      tolower(trimws(x)) %in% c("true", "yes", "1")
+    }
+    data$IsCorresponding <- sapply(data$Corresponding, is_corr)
   } else {
     data$IsCorresponding <- FALSE
   }

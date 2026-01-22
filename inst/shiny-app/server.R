@@ -91,24 +91,58 @@ server <- function(input, output, session) {
     updateTextAreaInput(session, "combined_preview", value = outputs_rv()$combined)
   })
 
-  output$titlepage <- renderPrint({
+  render_preview_html <- function(text) {
+    if (is.null(text) || length(text) == 0) {
+      return("")
+    }
+    lines <- strsplit(text, "\n", fixed = TRUE)[[1]]
+    html_lines <- vapply(lines, function(line) {
+      is_title <- grepl("^##\\s+", line)
+      line_text <- sub("^##\\s+", "", line)
+      line_text <- htmltools::htmlEscape(line_text)
+      line_text <- gsub("\\^([^\\^]+)\\^([†*]?)", "<sup>\\1\\2</sup>", line_text, perl = TRUE)
+      if (!grepl("^[†*]", line_text)) {
+        line_text <- gsub("([A-Za-z0-9\\)])([†*])", "\\1<sup>\\2</sup>", line_text, perl = TRUE)
+      }
+      if (is_title) {
+        line_text <- paste0("<strong>", line_text, "</strong>")
+      }
+      line_text
+    }, character(1))
+
+    html <- paste(html_lines, collapse = "<br>")
+    htmltools::HTML(
+      paste0(
+        "<div style=\"white-space: normal; font-family: inherit; font-size: 14px;\">",
+        html,
+        "</div>"
+      )
+    )
+  }
+
+  output$combined_preview_rendered <- renderUI({
     req(outputs_rv())
-    outputs_rv()$title_page
+    render_preview_html(outputs_rv()$combined)
   })
 
-  output$acknowledgements <- renderPrint({
+  output$titlepage <- renderUI({
     req(outputs_rv())
-    outputs_rv()$acknowledgements
+    render_preview_html(outputs_rv()$title_page)
   })
 
-  output$conflict <- renderPrint({
+  output$acknowledgements <- renderUI({
     req(outputs_rv())
-    outputs_rv()$conflict
+    render_preview_html(outputs_rv()$acknowledgements)
   })
 
-  output$contributions <- renderPrint({
+  output$conflict <- renderUI({
     req(outputs_rv())
-    outputs_rv()$contributions
+    render_preview_html(outputs_rv()$conflict)
+  })
+
+  output$contributions <- renderUI({
+    req(outputs_rv())
+    render_preview_html(outputs_rv()$contributions)
   })
 
   output$download_template_csv <- downloadHandler(

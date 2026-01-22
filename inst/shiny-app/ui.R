@@ -39,12 +39,17 @@ fluidPage(
 
   tags$hr(),
   tags$h3("5) Preview and copy"),
-  tags$p("These previews are plain text, ready for copy/paste."),
-  textAreaInput("combined_preview", "Combined output", value = "", rows = 12),
+  tags$p("These previews are formatted for clean copy/paste."),
+  uiOutput("combined_preview_rendered"),
+  checkboxInput("show_plain", "Show plain text output", value = FALSE),
+  conditionalPanel(
+    condition = "input.show_plain",
+    textAreaInput("combined_preview", "Combined output (plain text)", value = "", rows = 12)
+  ),
   tabsetPanel(
-    tabPanel("Title page", verbatimTextOutput("titlepage")),
-    tabPanel("Acknowledgements", verbatimTextOutput("acknowledgements")),
-    tabPanel("Conflict of interest", verbatimTextOutput("conflict")),
-    tabPanel("Contributions", verbatimTextOutput("contributions"))
+    tabPanel("Title page", uiOutput("titlepage")),
+    tabPanel("Acknowledgements", uiOutput("acknowledgements")),
+    tabPanel("Conflict of interest", uiOutput("conflict")),
+    tabPanel("Contributions", uiOutput("contributions"))
   )
 )

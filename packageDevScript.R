@@ -85,6 +85,7 @@ browseURL(html_path)
 
 
 authors <- data.frame(
+  Order          = c(1, 2, 3),
   FirstName      = c("Alice", "Bob", "Charlie"),
   MiddleName     = c("M.", "", "Q."),
   LastName       = c("Smith", "Johnson", "Lee"),
@@ -97,10 +98,12 @@ authors <- data.frame(
   stringsAsFactors = FALSE
 )
 
+write.csv(authors, "authors_test.csv", row.names = FALSE)
 cat(generate_title_page(authors, title = "A Great Paper"))
 html_path <- render_section_html("Title Page", generate_title_page, authors, title="A great paper")
 browseURL(html_path)
 
 library(shiny)
 
+devtools::install()
 shiny::runApp(system.file("shiny-app", package = "authordown"))
