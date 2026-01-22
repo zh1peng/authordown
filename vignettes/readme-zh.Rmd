@@ -10,7 +10,8 @@ vignette: >
 ---
 
 ```{r, echo=FALSE, results='asis'}
-path <- if (file.exists("README.zh.md")) "README.zh.md" else file.path("..", "README.zh.md")
+input_dir <- dirname(knitr::current_input())
+path <- file.path(input_dir, "README.zh.md")
 lines <- readLines(path, warn = FALSE)
 lines <- lines[!grepl("R-CMD-check", lines)]
 cat(lines, sep = "\n")

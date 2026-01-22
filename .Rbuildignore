@@ -4,6 +4,7 @@
 packageDescription.R
 ^\.git$
 ^\.gitignore$
+^\.github$
 ^\.Rcheck$
 ^check-output.*$
 ^packageDevScript\.R$
@@ -19,3 +20,4 @@ packageDescription.R
 ^vignettes/authors\.csv$
 ^rlib$
 ^_pkgdown\.yml$
+^README\.zh\.md$

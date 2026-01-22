@@ -5,24 +5,25 @@
 #'     \item An optional paper title
 #'     \item Author line (with superscript affiliation indices)
 #'     \item Affiliation list (labeled by superscript numbers)
-#'     \item Co-first author footnote (\\code{\\u2020} or \"†\") if multiple authors share the same minimal rank
+#'     \item Co-first author footnote (dagger symbol) if multiple authors share the same minimal rank
 #'     \item Corresponding author footnote (*) and contact line
 #'   }
 #'
 #' The function expects columns:
-#'   \\itemize{
-#'     \\item \\strong{FirstName}, \\strong{MiddleName}, \\strong{LastName} (strings)
-#'     \\item \\strong{Rank} (numeric), used to detect co-first authors (lowest rank)
-#'     \\item \\strong{Correspondence} (logical or \"TRUE\"/\"FALSE\" string)
-#'     \\item \\strong{Email} (for corresponding authors)
-#'     \\item \\strong{Affiliation1}, \\strong{Affiliation2}, etc. (any number of these)
+#'   \itemize{
+#'     \item \strong{FirstName}, \strong{MiddleName}, \strong{LastName} (strings)
+#'     \item \strong{Rank} (numeric), used to detect co-first authors (lowest rank)
+#'     \item \strong{Correspondence} (logical or "TRUE"/"FALSE" string)
+#'     \item \strong{Email} (for corresponding authors)
+#'     \item \strong{Affiliation1}, \strong{Affiliation2}, etc. (any number of these)
 #'   }
 #'
 #' @param data A data frame with the columns listed above.
 #' @param style Title page style. Supported values: "default", "APA", "Nature".
 #' @param title Optional character string for the paper title.
 #' @param show_degree Logical. If TRUE, include Degree after author names.
-#' @param co_first_footnote Logical. If \\code{TRUE}, adds a footnote for co-first authors if multiple authors share the same \\strong{lowest} rank.
+#' @param co_first_footnote Logical. If \code{TRUE}, adds a footnote for co-first
+#'   authors if multiple authors share the same \strong{lowest} rank.
 #' @return A single character string suitable for copy-pasting into Word.
 #' @export
 #' @examples
@@ -34,7 +35,9 @@
 #'   Email          = c("alice@example.com", "bob@example.com", "charlie@example.org"),
 #'   Rank           = c(1, 1, 2),  # Alice and Bob are co-first authors
 #'   Correspondence = c(TRUE, FALSE, FALSE),
-#'   Affiliation1   = c("University of X, Dept. of Y", "University of X, Dept. of Y", "Institute of Z"),
+#'   Affiliation1   = c("University of X, Dept. of Y",
+#'                      "University of X, Dept. of Y",
+#'                      "Institute of Z"),
 #'   Affiliation2   = c(NA, "Company W", NA),
 #'   stringsAsFactors = FALSE
 #' )

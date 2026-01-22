@@ -63,7 +63,7 @@ authordown_validate <- function(data, require_affiliations = FALSE) {
       shown <- paste0(
         "row ", bad_idx, ": ", shQuote(email_vals[bad_idx])
       )
-      shown <- paste(head(shown, 5), collapse = ", ")
+      shown <- paste(utils::head(shown, 5), collapse = ", ")
       if (length(bad_idx) > 5) {
         shown <- paste0(shown, ", ...")
       }

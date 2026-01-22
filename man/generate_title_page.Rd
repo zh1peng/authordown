@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_title_page.R
 \name{generate_title_page}
 \alias{generate_title_page}
-\title{Generate a Title Page}
+\title{Generate a Title Page (Journal-Style)}
 \usage{
 generate_title_page(
   data,
@@ -13,37 +13,53 @@ generate_title_page(
 )
 }
 \arguments{
-\item{data}{A data frame containing at least: FirstName, MiddleName, LastName,
-(optionally) Rank, Correspondence, and one or more Affiliation* columns.}
+\item{data}{A data frame with the columns listed above.}
 
-\item{style}{A character string specifying the style (e.g., "default", "APA", "Nature").}
+\item{style}{Title page style. Supported values: "default", "APA", "Nature".}
 
-\item{title}{An optional paper title.}
+\item{title}{Optional character string for the paper title.}
 
 \item{show_degree}{Logical. If TRUE, include Degree after author names.}
 
-\item{co_first_footnote}{Logical. If TRUE and Rank is provided, adds a note for co-first authors.}
+\item{co_first_footnote}{Logical. If \code{TRUE}, adds a footnote for co-first
+authors if multiple authors share the same \strong{lowest} rank.}
 }
 \value{
-A character string with the formatted title page.
+A single character string suitable for copy-pasting into Word.
 }
 \description{
-Produces a formatted title page that includes the paper title,
-author names with affiliation indices, and an affiliation legend. Optionally adds
-a note for co-first authors.
+Produces a journal-style title page text with:
+\enumerate{
+\item An optional paper title
+\item Author line (with superscript affiliation indices)
+\item Affiliation list (labeled by superscript numbers)
+\item Co-first author footnote (dagger symbol) if multiple authors share the same minimal rank
+\item Corresponding author footnote (*) and contact line
+}
+
+The function expects columns:
+\itemize{
+\item \strong{FirstName}, \strong{MiddleName}, \strong{LastName} (strings)
+\item \strong{Rank} (numeric), used to detect co-first authors (lowest rank)
+\item \strong{Correspondence} (logical or "TRUE"/"FALSE" string)
+\item \strong{Email} (for corresponding authors)
+\item \strong{Affiliation1}, \strong{Affiliation2}, etc. (any number of these)
+}
 }
 \examples{
 authors <- data.frame(
-  FirstName = c("Alice", "Bob"),
-  MiddleName = c("M.", ""),
-  LastName = c("Smith", "Johnson"),
-  Degree = c("PhD", "MD"),
-  Email = c("alice@example.com", "bob@example.com"),
-  Rank = c(1, 2),
-  Correspondence = c(TRUE, FALSE),
-  Affiliation1 = c("University of X, Dept. of Y", "University of X, Dept. of Y"),
-  Affiliation2 = c(NA, "Company Z, Research Division"),
+  FirstName      = c("Alice", "Bob", "Charlie"),
+  MiddleName     = c("M.", "", "Q."),
+  LastName       = c("Smith", "Johnson", "Lee"),
+  Degree         = c("PhD", "MD", "PhD"),
+  Email          = c("alice@example.com", "bob@example.com", "charlie@example.org"),
+  Rank           = c(1, 1, 2),  # Alice and Bob are co-first authors
+  Correspondence = c(TRUE, FALSE, FALSE),
+  Affiliation1   = c("University of X, Dept. of Y",
+                     "University of X, Dept. of Y",
+                     "Institute of Z"),
+  Affiliation2   = c(NA, "Company W", NA),
   stringsAsFactors = FALSE
 )
-generate_title_page(authors, style = "default", title = "Example Paper", show_degree = TRUE)
+cat(generate_title_page(authors, title = "A Great Paper", show_degree = TRUE))
 }

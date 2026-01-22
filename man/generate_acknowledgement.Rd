@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_acknowledgement.R
 \name{generate_acknowledgement}
 \alias{generate_acknowledgement}
-\title{Generate an Acknowledgement Section}
+\title{Generate an Acknowledgement Section (Updated)}
 \usage{
 generate_acknowledgement(data, style = c("paragraph", "bullets", "numbered"))
 }
@@ -12,16 +12,19 @@ generate_acknowledgement(data, style = c("paragraph", "bullets", "numbered"))
 \item{style}{Output style: "paragraph", "bullets", or "numbered".}
 }
 \value{
-A character string with the formatted acknowledgements.
+A character string with the combined acknowledgements.
 }
 \description{
-Combines acknowledgements from each author into a single formatted block.
+Combines acknowledgements provided by the authors into a single,
+coherent sentence. The function ignores author names (as they are assumed to be
+included in the acknowledgement text itself) and simply concatenates each non-empty
+acknowledgement entry using a semicolon.
 }
 \examples{
 authors <- data.frame(
-  FirstName = c("Alice", "Bob"),
-  LastName = c("Smith", "Johnson"),
-  Acknowledgement = c("Thanks for funding A", "Supported by XYZ"),
+  Acknowledgement = c("This work received support from resource X", 
+                      "Resource Y was instrumental", 
+                      "Alice Smith received support from resource ZZ"),
   stringsAsFactors = FALSE
 )
 generate_acknowledgement(authors, style = "paragraph")
