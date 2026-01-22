@@ -2,10 +2,10 @@ Package: authordown
 Title: Author Metadata Management and Manuscript Front Matter
 Version: 0.1.0
 Authors@R: c(
-    person("Zhipeng", "Zhang", email = "zhipeng30@foxmail.com", role = c("aut", "cre"))
+    person("Zhipeng", "Cao", email = "zhipeng30@foxmail.com", role = c("aut", "cre"))
   )
-Author: Zhipeng Zhang [aut, cre]
-Maintainer: Zhipeng Zhang <zhipeng30@foxmail.com>
+Author: Zhipeng Cao [aut, cre]
+Maintainer: Zhipeng Cao <zhipeng30@foxmail.com>
 Description: Manage author metadata and generate manuscript front matter,
     including title pages, acknowledgements, conflicts of interest, and
     contributions, with support for large author lists.
