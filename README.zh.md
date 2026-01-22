@@ -1,6 +1,8 @@
-﻿# authordown <img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" />
+# authordown
 
 [![R-CMD-check](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml)
+
+<img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" />
 
 **English README:** [README.md](README.md)
 
