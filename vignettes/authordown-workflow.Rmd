@@ -82,3 +82,16 @@ authors <- authordown_read_tencent(qq_url)
 - Missing required columns means your input does not include required fields such as `FirstName` and `LastName`.
 - Corresponding authors must have an Email means a row has `Corresponding = TRUE` but `Email` is blank.
 - ORCID values must match `0000-0000-0000-0000` format.
+
+## Render sections for copy/paste
+
+If you want HTML for clean copy/paste into a manuscript system, use `render_section_html()`:
+
+```{r, eval=FALSE}
+html_path <- render_section_html(
+  section_title = "Conflict of Interest",
+  content_function = generate_conflict,
+  data = authors,
+  style = "paragraph"
+)
+```

@@ -1,8 +1,6 @@
-# authordown
+# authordown <img src="man/figures/logo.png" align="right" height="120" alt="authordown logo" />
 
 [![R-CMD-check](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/zh1peng/authordown/actions/workflows/R-CMD-check.yaml)
-
-<img src="man/figures/logo.png" align="right" height="120" alt="authordown logo" />
 
 authordown is an R package for managing author metadata and generating manuscript front matter, especially for large author lists.
 
@@ -103,7 +101,22 @@ library(shiny)
 shiny::runApp(system.file("shiny-app", package = "authordown"))
 ```
 
-Upload your template CSV, select a style, and click Generate to preview the title page.
+Workflow: download the template, fill it, upload it, preview the parsed data, then generate outputs for copy/paste.
+
+## Render sections for copy/paste
+
+If you want rendered HTML for easy copy/paste into a manuscript system, use:
+
+```r
+\dontrun{
+html_path <- render_section_html(
+  section_title = "Conflict of Interest",
+  content_function = generate_conflict,
+  data = authors,
+  style = "paragraph"
+)
+}
+```
 
 ## Troubleshooting
 
