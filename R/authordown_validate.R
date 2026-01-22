@@ -55,10 +55,22 @@ authordown_validate <- function(data, require_affiliations = FALSE) {
   }
 
   if ("Email" %in% names(data)) {
-    email_vals <- data$Email[!is.na(data$Email)]
-    bad_email <- email_vals[!grepl("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", email_vals)]
-    if (length(bad_email) > 0) {
-      errors <- c(errors, "Email values must look like valid addresses.")
+    email_vals <- trimws(as.character(data$Email))
+    data$Email <- email_vals
+    bad_idx <- which(!is.na(email_vals) &
+      !grepl("^[^@[:space:]]+@[^@[:space:]]+$", email_vals))
+    if (length(bad_idx) > 0) {
+      shown <- paste0(
+        "row ", bad_idx, ": ", shQuote(email_vals[bad_idx])
+      )
+      shown <- paste(head(shown, 5), collapse = ", ")
+      if (length(bad_idx) > 5) {
+        shown <- paste0(shown, ", ...")
+      }
+      errors <- c(
+        errors,
+        paste0("Email values must look like valid addresses (", shown, ").")
+      )
     }
   }
 

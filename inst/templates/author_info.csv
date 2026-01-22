@@ -1,7 +1,7 @@
 Order,FirstName,MiddleName,LastName,Email,Affiliation1,Affiliation2,Affiliation3,Affiliation4,Corresponding
-1,Zhipeng,,Cao,zhipeng.cao@example.com,"Shanghai Xuhui Mental Health Center, Shanghai, China","Quantum Brain Lab, Lunar Base","Interstellar Data Commons",,TRUE
-2,John,,Snow,john.snow@winterfell.example,"Winterfell Institute of Cognitive Resilience","The Wall Imaging Station","Northern Clinical Alliance",,TRUE
-3,Harry,,Potter,harry.potter@hogwarts.example,"Hogwarts School of Mind and Magic","Diagon Alley Methods Lab","Ministry of Magic Research Unit",,FALSE
-4,Neo,,Anderson,neo.matrix@zion.example,"Zion Institute for Systems Neuroscience","Matrix Simulation Lab","Oracle Advisory Group",,TRUE
-5,Dolores,,Abernathy,dolores@westworld.example,"Westworld Neural Dynamics Lab","Host Cognition Unit","Mesa BioSystems",,FALSE
-6,Sheldon,,Cooper,sheldon.cooper@caltech.example,"Caltech Theoretical Neuroscience Group","Geek Physics Lab","Pasadena Cognitive Center",,TRUE
+1,Zhipeng,,Cao,zhipeng.cao@neuroverse.lab,"Shanghai Xuhui Mental Health Center, Shanghai, China","Quantum Brain Lab, Lunar Base","Interstellar Data Commons",,TRUE
+2,John,,Snow,john.snow@winterfell.north,"Winterfell Institute of Cognitive Resilience","The Wall Imaging Station","Northern Clinical Alliance",,TRUE
+3,Harry,,Potter,harry.potter@hogwarts.owl,"Hogwarts School of Mind and Magic","Diagon Alley Methods Lab","Ministry of Magic Research Unit",,FALSE
+4,Neo,,Anderson,neo.matrix@zion.free,"Zion Institute for Systems Neuroscience","Matrix Simulation Lab","Oracle Advisory Group",,TRUE
+5,Dolores,,Abernathy,dolores@westworld.loop,"Westworld Neural Dynamics Lab","Host Cognition Unit","Mesa BioSystems",,FALSE
+6,Sheldon,,Cooper,sheldon.cooper@caltech.quark,"Caltech Theoretical Neuroscience Group","Geek Physics Lab","Pasadena Cognitive Center",,TRUE
