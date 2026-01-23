@@ -90,7 +90,7 @@ server <- function(input, output, session) {
   output$data_preview <- renderTable({
     data <- data_rv()
     validate(need(is.null(error_rv()), "Fix validation errors to preview data."))
-    head(data, 10)
+    data
   }, rownames = TRUE)
 
   outputs_rv <- eventReactive(input$generate, {
