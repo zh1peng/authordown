@@ -1,5 +1,26 @@
 library(shiny)
-library(authordown)
+
+load_authordown <- function() {
+  if (requireNamespace("authordown", quietly = TRUE)) {
+    library(authordown)
+    return(invisible(TRUE))
+  }
+
+  r_dir <- file.path(getwd(), "R")
+  if (!dir.exists(r_dir)) {
+    stop("authordown package not installed and R/ directory not found.")
+  }
+  r_files <- list.files(r_dir, pattern = "\\.R$", full.names = TRUE)
+  if (length(r_files) == 0) {
+    stop("authordown package not installed and no R/*.R files found.")
+  }
+  for (r_file in r_files) {
+    source(r_file, local = TRUE)
+  }
+  invisible(TRUE)
+}
+
+load_authordown()
 
 server <- function(input, output, session) {
   read_input_data <- function(path, sheet = NULL) {
