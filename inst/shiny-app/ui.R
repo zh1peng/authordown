@@ -31,7 +31,7 @@ fluidPage(
   fluidRow(
     column(4, selectInput("style", "Title page style", choices = c("default", "APA", "Nature"))),
     column(4, checkboxInput("show_degree", "Show degrees", value = FALSE)),
-    column(4, textInput("paper_title", "Paper title", value = "Example Paper"))
+    column(4, textInput("paper_title", "Paper title", value = "A great paper"))
   ),
   fluidRow(
     column(4, selectInput("ack_style", "Acknowledgements style", choices = c("paragraph", "bullets", "numbered"))),
