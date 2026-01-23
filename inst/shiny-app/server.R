@@ -1,18 +1,13 @@
 library(shiny)
 
 load_authordown <- function() {
-  if (requireNamespace("authordown", quietly = TRUE)) {
-    library(authordown)
-    return(invisible(TRUE))
-  }
-
   r_dir <- file.path(getwd(), "R")
   if (!dir.exists(r_dir)) {
-    stop("authordown package not installed and R/ directory not found.")
+    stop("authordown sources not found in app directory.")
   }
   r_files <- list.files(r_dir, pattern = "\\.R$", full.names = TRUE)
   if (length(r_files) == 0) {
-    stop("authordown package not installed and no R/*.R files found.")
+    stop("No R/*.R files found in app directory.")
   }
   for (r_file in r_files) {
     source(r_file, local = TRUE)
@@ -53,9 +48,14 @@ server <- function(input, output, session) {
       return(read_input_data(sample_path))
     }
 
-    local_path <- file.path(getwd(), "inst", "extdata", "authordown_template.csv")
+    local_path <- file.path(getwd(), "extdata", "authordown_template.csv")
     if (file.exists(local_path)) {
       return(read_input_data(local_path))
+    }
+
+    repo_path <- file.path(getwd(), "inst", "extdata", "authordown_template.csv")
+    if (file.exists(repo_path)) {
+      return(read_input_data(repo_path))
     }
 
     stop("Sample template not found in package or repo.")
