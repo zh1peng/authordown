@@ -1,3 +1,3 @@
-Order,FirstName,MiddleName,LastName,Suffix,Degree,Email,Orcid,Corresponding,EqualContribution,Contribution,Acknowledgement,Conflict,Affiliation1,Affiliation2,Affiliation3
-1,Alice,M.,Smith,,PhD,alice@example.com,0000-0001-2345-6789,TRUE,co-first,"Conceptualization; Writing - Original Draft","Funding from Grant A","No conflict","University X, Dept. Y","Institute Z",
-2,Bob,,Johnson,,MD,bob@example.com,0000-0002-3456-789X,FALSE,co-first,"Data Curation; Writing - Review & Editing",,"Consultant at Company Z","University X, Dept. Y","Company Z",
+Order,FirstName,MiddleName,LastName,Suffix,Degree,Email,Orcid,Corresponding,Contribution,Acknowledgement,Conflict,Affiliation1,Affiliation2,Affiliation3
+1,Alice,M.,Smith,,PhD,alice@example.com,0000-0001-2345-6789,TRUE,Conceptualization; Writing - Original Draft,Funding from Grant A,No conflict,"University X, Dept. Y",Institute Z,
+2,Bob,,Johnson,,MD,bob@example.com,0000-0002-3456-789X,FALSE,Data Curation; Writing - Review & Editing,,Consultant at Company Z,"University X, Dept. Y",Company Z,

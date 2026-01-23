@@ -83,19 +83,6 @@ authordown_validate <- function(data, require_affiliations = FALSE) {
       errors <- c(errors, "ORCID values must use the 0000-0000-0000-0000 format.")
     }
   }
-
-  if ("EqualContribution" %in% names(data)) {
-    allowed <- c("co-first", "co-senior", "equal", "none")
-    eq_vals <- data$EqualContribution[!is.na(data$EqualContribution)]
-    bad_eq <- eq_vals[!tolower(eq_vals) %in% allowed]
-    if (length(bad_eq) > 0) {
-      errors <- c(
-        errors,
-        "EqualContribution must be one of: co-first, co-senior, equal, none."
-      )
-    }
-  }
-
   aff_cols <- grep("^Affiliation\\d+$", names(data), value = TRUE)
   if (isTRUE(require_affiliations) && length(aff_cols) == 0) {
     errors <- c(errors, "At least one Affiliation column is required.")
@@ -136,7 +123,6 @@ authordown_canonicalize <- function(data) {
     Order = c("order", "authororder"),
     Rank = c("rank"),
     Corresponding = c("corresponding", "correspondence", "correspondingauthor"),
-    EqualContribution = c("equalcontribution", "equalcontrib", "cofirst", "cosenior"),
     Contribution = c("contribution", "credit"),
     Acknowledgement = c("acknowledgement", "acknowledgment", "acknowledgments"),
     Conflict = c("conflict", "coi", "conflictofinterest")
@@ -206,11 +192,6 @@ authordown_canonicalize <- function(data) {
     }
     data$Order <- parsed
   }
-
-  if ("EqualContribution" %in% names(data)) {
-    data$EqualContribution <- tolower(data$EqualContribution)
-  }
-
   if ("Orcid" %in% names(data)) {
     data$Orcid <- toupper(data$Orcid)
   }
