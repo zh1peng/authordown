@@ -6,6 +6,8 @@
 
 **English README:** [README.md](README.md)
 
+在线应用：[打开应用](https://zh1peng-authordown.share.connect.posit.cloud/)
+
 authordown 是一个用于管理作者信息并生成论文前置信息（尤其是大型作者列表题名页）的 R 包。
 
 ## 功能
