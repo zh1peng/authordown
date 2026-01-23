@@ -171,10 +171,20 @@ generate_title_page <- function(data,
   # corresponding authors
   corr_idx <- which(data$IsCorresponding == TRUE)
   if (length(corr_idx) > 0 && "Email" %in% colnames(data)) {
-    corr_emails <- unique(as.character(data$Email[corr_idx]))
-    corr_emails <- corr_emails[!is.na(corr_emails) & corr_emails != ""]
-    if (length(corr_emails) > 0) {
-      corr_line <- paste("Corresponding author(s):", paste(corr_emails, collapse = ", "))
+    corr_entries <- vapply(corr_idx, function(i) {
+      nm_parts <- c(data$FirstName[i], data$MiddleName[i], data$LastName[i])
+      nm_parts <- nm_parts[!is.na(nm_parts) & nm_parts != "" & nm_parts != "NA"]
+      full_name <- paste(nm_parts, collapse = " ")
+      email <- as.character(data$Email[i])
+      email <- email[!is.na(email) & email != ""]
+      if (length(email) == 0) {
+        return(full_name)
+      }
+      paste0(full_name, " <", email, ">")
+    }, character(1))
+    corr_entries <- unique(corr_entries[!is.na(corr_entries) & corr_entries != ""])
+    if (length(corr_entries) > 0) {
+      corr_line <- paste("Corresponding author(s):", paste(corr_entries, collapse = "; "))
       # Mark with '*'
       footnotes <- c(footnotes, paste0("*", corr_line))
     }
