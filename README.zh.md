@@ -98,6 +98,8 @@ authors_xlsx <- authordown_read_local(xlsx_path)
 
 ## Shiny 应用
 
+在线应用：[打开应用](https://zh1peng-authordown.share.connect.posit.cloud/)
+
 ```r
 library(shiny)
 shiny::runApp(system.file("shiny-app", package = "authordown"))

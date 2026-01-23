@@ -100,6 +100,8 @@ needed. The title page numbers affiliations in the order they first appear.
 
 ## Shiny app
 
+Online app: [Open the app](https://zh1peng-authordown.share.connect.posit.cloud/)
+
 ```r
 library(shiny)
 shiny::runApp(system.file("shiny-app", package = "authordown"))
