@@ -1,0 +1,35 @@
+name: Sync Shiny App
+
+on:
+  push:
+    paths:
+      - "R/**"
+      - "inst/extdata/**"
+      - "scripts/sync-shiny-app.R"
+      - ".github/workflows/sync-shiny-app.yml"
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Sync app files
+        run: Rscript scripts/sync-shiny-app.R
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add inst/shiny-app/R inst/shiny-app/extdata
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync shiny app files [skip ci]"
+          git push
