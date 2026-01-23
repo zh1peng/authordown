@@ -21,7 +21,10 @@ fluidPage(
 
   tags$hr(),
   tags$h3("3) Preview parsed data"),
-  tableOutput("data_preview"),
+  tags$div(
+    style = "max-height: 320px; overflow-y: auto; border: 1px solid #ddd; padding: 6px;",
+    tableOutput("data_preview")
+  ),
 
   tags$hr(),
   tags$h3("4) Generate outputs"),
