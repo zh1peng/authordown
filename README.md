@@ -6,8 +6,8 @@
 
 authordown is an R package for managing author metadata and generating manuscript front matter, especially for large author lists.
 
-Chinese README (web): https://zh1peng.github.io/authordown/articles/readme-zh.html
-
+Chinese README (web): [中文](https://zh1peng.github.io/authordown/articles/readme-zh.html)
+Online app: [Open the app](https://zh1peng-authordown.share.connect.posit.cloud/)
 ## Features
 
 - Title page generation with affiliation numbering and correspondence notes
