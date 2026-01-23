@@ -49,7 +49,16 @@ server <- function(input, output, session) {
 
   sample_data <- function() {
     sample_path <- system.file("extdata", "authordown_template.csv", package = "authordown")
-    read_input_data(sample_path)
+    if (nzchar(sample_path)) {
+      return(read_input_data(sample_path))
+    }
+
+    local_path <- file.path(getwd(), "inst", "extdata", "authordown_template.csv")
+    if (file.exists(local_path)) {
+      return(read_input_data(local_path))
+    }
+
+    stop("Sample template not found in package or repo.")
   }
 
   data_rv <- reactiveVal(sample_data())
