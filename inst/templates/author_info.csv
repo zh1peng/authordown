@@ -1,5 +1,5 @@
 Order,Rank,FirstName,MiddleName,LastName,Email,Affiliation1,Affiliation2,Affiliation3,Affiliation4,Corresponding
-1,1,Zhipeng,,Cao,zhipeng.cao@neuroverse.lab,"Shanghai Xuhui Mental Health Center, Shanghai, China","Quantum Brain Lab, Lunar Base","Interstellar Data Commons",,TRUE
+1,1,Zhipeng,,Cao,zhipeng.cao@neuroverse.lab,"Neuroverse Research Institute, Shanghai, China","Quantum Brain Lab, Lunar Base","Interstellar Data Commons",,TRUE
 2,1,John,,Snow,john.snow@winterfell.north,"Winterfell Institute of Cognitive Resilience","Interstellar Data Commons","Northern Clinical Alliance",,TRUE
 3,2,Harry,,Potter,harry.potter@hogwarts.owl,"Hogwarts School of Mind and Magic","Quantum Brain Lab, Lunar Base","Ministry of Magic Research Unit",,FALSE
 4,3,Neo,,Anderson,neo.matrix@zion.free,"Zion Institute for Systems Neuroscience","Matrix Simulation Lab","Interstellar Data Commons",,TRUE
