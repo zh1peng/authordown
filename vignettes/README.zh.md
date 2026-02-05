@@ -4,7 +4,7 @@
 
 <img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" />
 
-**English README:** [README.md](README.md)
+**English README:** [README.md](https://github.com/zh1peng/authordown/blob/master/README.md)
 
 authordown 是一个用于管理作者信息并生成论文前置信息（尤其是大型作者列表题名页）的 R 包。
 
