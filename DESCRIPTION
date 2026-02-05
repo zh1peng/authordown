@@ -10,7 +10,7 @@ Description: Manage author metadata and generate manuscript front matter,
     including title pages, acknowledgements, conflicts of interest, and
     contributions, with support for large author lists.
 License: AGPL-3
-URL: https://zh1peng.github.io/authordown, https://github.com/zh1peng/authordown
+URL: https://zh1peng.github.io/authordown/, https://github.com/zh1peng/authordown
 BugReports: https://github.com/zh1peng/authordown/issues
 Encoding: UTF-8
 Depends:

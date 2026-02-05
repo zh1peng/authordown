@@ -4,7 +4,7 @@
 
 <img src="man/figures/logo.png" align="right" height="150" alt="authordown logo" />
 
-**English README:** [README.md](README.md)
+**English README:** [README.md](https://github.com/zh1peng/authordown/blob/master/README.md)
 
 在线应用：[打开应用](https://zh1peng-authordown.share.connect.posit.cloud/)
 

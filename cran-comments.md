@@ -10,8 +10,8 @@ Notes:
 
 ## Additional comments
 - This is a new submission.
+- Fixed URL redirect in DESCRIPTION (added trailing slash) and removed local file URI by linking README.md to GitHub in the Chinese vignette.
 
 devtools::build()
-
 
 
