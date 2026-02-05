@@ -21,3 +21,4 @@ packageDescription.R
 ^rlib$
 ^_pkgdown\.yml$
 ^README\.zh\.md$
+^scripts$

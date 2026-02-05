@@ -3,11 +3,10 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 1 note
 
 Notes:
-- URL moved to https://zh1peng.github.io/authordown/ (redirect reported by check).
-- Installed package size is ~6.2MB; help directory is ~6.0MB.
+- Installed package size is ~6.3MB; help directory is ~6.0MB.
 
 ## Additional comments
 - This is a new submission.
